@@ -17,6 +17,35 @@
     toastTimer = setTimeout(() => toastEl.classList.remove("is-on"), 2400);
   }
 
+  /* ---------- Mobile menu (hamburger drawer) ---------- */
+  const sidebar = $("#sidebar");
+  const scrim = $("#scrim");
+  const openBtn = $("#menu-open");
+  const closeBtn = $("#menu-close");
+  const mobileMQ = window.matchMedia("(max-width: 900px)");
+
+  function setMenu(open) {
+    sidebar.classList.toggle("is-open", open);
+    document.body.classList.toggle("menu-open", open);
+    openBtn.setAttribute("aria-expanded", String(open));
+    if (open) {
+      scrim.hidden = false;
+      requestAnimationFrame(() => scrim.classList.add("is-on"));
+      closeBtn.focus();
+    } else {
+      scrim.classList.remove("is-on");
+      setTimeout(() => { if (!sidebar.classList.contains("is-open")) scrim.hidden = true; }, 250);
+    }
+  }
+  openBtn.addEventListener("click", () => setMenu(true));
+  closeBtn.addEventListener("click", () => { setMenu(false); openBtn.focus(); });
+  scrim.addEventListener("click", () => setMenu(false));
+  $$("#sidebar a").forEach(a => a.addEventListener("click", () => { if (mobileMQ.matches) setMenu(false); }));
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && sidebar.classList.contains("is-open")) { setMenu(false); openBtn.focus(); }
+  });
+  mobileMQ.addEventListener("change", e => { if (!e.matches) setMenu(false); });
+
   /* ---------- Routing (hash based) ---------- */
   const VIEWS = ["passport", "marketplace", "mentorship", "pathway", "dashboard"];
 

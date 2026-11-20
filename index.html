@@ -21,12 +21,36 @@
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
   <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.94 5.96 6.56.95-4.75 4.63 1.12 6.54L12 17.5l-5.87 3.08 1.12-6.54L2.5 9.41l6.56-.95z"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
 </svg>
 
 <div class="app">
 
-  <!-- ================= Sidebar ================= -->
-  <aside class="sidebar">
+  <!-- ================= Mobile top bar (shown ≤ 900px) ================= -->
+  <header class="topbar">
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
+      <svg class="icon"><use href="#i-menu"/></svg>
+    </button>
+    <a class="brand brand--top" href="#passport" aria-label="SkillBridge HR home">
+      <svg class="brand__logo" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#0D6E68"/>
+        <path d="M6.2 20.3a10.6 9.4 0 0 1 19.6 0" fill="none" stroke="#fff" stroke-width="2.6"/>
+        <path d="M6 20.5h20" stroke="#F6B53D" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M12.2 20.5v-6.6M16 20.5v-8.4M19.8 20.5v-6.6" stroke="#F6B53D" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="brand__name">SkillBridge HR</span>
+    </a>
+    <div class="user__avatar topbar__avatar" aria-hidden="true">RS</div>
+  </header>
+
+  <div class="scrim" id="scrim" hidden></div>
+
+  <!-- ================= Sidebar (drawer on mobile) ================= -->
+  <aside class="sidebar" id="sidebar" aria-label="Navigation">
+    <button class="menu-btn sidebar__close" id="menu-close" type="button" aria-label="Close menu">
+      <svg class="icon"><use href="#i-close"/></svg>
+    </button>
     <a class="brand" href="#passport" aria-label="SkillBridge HR home">
       <svg class="brand__logo" viewBox="0 0 32 32" aria-hidden="true">
         <rect width="32" height="32" rx="8" fill="#0D6E68"/>
