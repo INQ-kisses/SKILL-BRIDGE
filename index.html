@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkillBridge HR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-passport" viewBox="0 0 24 24"><rect x="3.5" y="3" width="17" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7.5 21v-1.5a2.5 2.5 0 0 1 2.5-2.5h4a2.5 2.5 0 0 1 2.5 2.5V21"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2.5" y="7" width="19" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2.5 13h19"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2.5"/><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"/><circle cx="18" cy="5" r="2.5"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 20.5h18"/><path d="M7 20.5v-6"/><path d="M12 20.5V5"/><path d="M17 20.5v-9"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.94 5.96 6.56.95-4.75 4.63 1.12 6.54L12 17.5l-5.87 3.08 1.12-6.54L2.5 9.41l6.56-.95z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+</svg>
+
+<div class="app">
+
+  <!-- ================= Sidebar ================= -->
+  <aside class="sidebar">
+    <a class="brand" href="#passport" aria-label="SkillBridge HR home">
+      <svg class="brand__logo" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#0D6E68"/>
+        <path d="M6.2 20.3a10.6 9.4 0 0 1 19.6 0" fill="none" stroke="#fff" stroke-width="2.6"/>
+        <path d="M6 20.5h20" stroke="#F6B53D" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M12.2 20.5v-6.6M16 20.5v-8.4M19.8 20.5v-6.6" stroke="#F6B53D" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="brand__name">SkillBridge HR</span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <div class="nav__label">My career</div>
+      <div class="nav__group">
+        <a class="nav__item" href="#passport" data-nav="passport"><svg class="icon"><use href="#i-passport"/></svg>Talent Passport</a>
+        <a class="nav__item" href="#marketplace" data-nav="marketplace"><svg class="icon"><use href="#i-briefcase"/></svg>Job Marketplace</a>
+        <a class="nav__item" href="#mentorship" data-nav="mentorship"><svg class="icon"><use href="#i-users"/></svg>Mentorship</a>
+        <a class="nav__item" href="#pathway" data-nav="pathway"><svg class="icon"><use href="#i-route"/></svg>Career Pathway</a>
+      </div>
+      <div class="nav__label">HR team</div>
+      <div class="nav__group">
+        <a class="nav__item" href="#dashboard" data-nav="dashboard"><svg class="icon"><use href="#i-chart"/></svg>Talent Dashboard</a>
+      </div>
+    </nav>
+
+    <div class="user">
+      <div class="user__avatar">RS</div>
+      <div>
+        <div class="user__name">Rina Santos</div>
+        <div class="user__role">Support Agent ·<br>sample user</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= Main ================= -->
+  <main class="main">
+
+    <!-- ========== 1. Talent Passport ========== -->
+    <section class="view" id="view-passport" data-view="passport">
+      <header class="page-head">
+        <div>
+          <div class="eyebrow">Employee view</div>
+          <h1 class="page-title">Talent Passport</h1>
+          <p class="page-lead">A living profile of what you can actually do, backed by evidence. It powers your job matches and your mentor pairing.</p>
+        </div>
+        <div class="strength">
+          <div class="strength__row"><span>Profile strength</span><span id="strength-pct">82%</span></div>
+          <div class="bar"><span class="bar__fill" id="strength-bar" style="width:82%"></span></div>
+          <p id="strength-note">Add one more endorsed skill to improve your matches.</p>
+        </div>
+      </header>
+
+      <div class="grid-2">
+        <div class="card skills">
+          <h2 class="card__title">Skills</h2>
+          <p class="card__sub">Managers can endorse a skill and attach evidence from real work.</p>
+
+          <div class="overline">Hard skills</div>
+          <ul class="list">
+            <li class="skill">
+              <div>
+                <div class="skill__name">Data entry</div>
+                <div class="skill__ev">Evidence: three years of daily use in Customer Support</div>
+                <span class="chip chip--teal chip--block"><svg class="icon"><use href="#i-check"/></svg>Endorsed by manager</span>
+              </div>
+            </li>
+            <li class="skill">
+              <div>
+                <div class="skill__name">Copywriting</div>
+                <div class="skill__ev">Evidence: wrote help-center articles for a product release</div>
+                <span class="chip chip--teal chip--block"><svg class="icon"><use href="#i-check"/></svg>Endorsed by manager</span>
+              </div>
+            </li>
+            <li class="skill">
+              <div>
+                <div class="skill__name">Spanish (conversational)</div>
+                <div class="skill__ev">Handles the Spanish-language chat queue</div>
+              </div>
+              <span class="chip chip--teal"><svg class="icon"><use href="#i-check"/></svg>Endorsed by manager</span>
+            </li>
+            <li class="skill">
+              <div>
+                <div class="skill__name">Python (basic)</div>
+                <div class="skill__ev">Self-reported · no evidence attached yet</div>
+              </div>
+              <button class="btn btn--outline" id="ask-endorse" type="button">Ask manager to endorse</button>
+            </li>
+          </ul>
+
+          <div class="overline">Soft skills</div>
+          <ul class="list">
+            <li class="skill">
+              <div>
+                <div class="skill__name">Customer empathy</div>
+                <div class="skill__ev">Evidence: consistently high quality-review scores</div>
+                <span class="chip chip--teal chip--block"><svg class="icon"><use href="#i-check"/></svg>Endorsed by manager</span>
+              </div>
+            </li>
+            <li class="skill">
+              <div>
+                <div class="skill__name">Leadership (emerging)</div>
+                <div class="skill__ev">Leads the weekly team huddle</div>
+              </div>
+              <span class="chip chip--grey">Self-reported</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="stack">
+          <div class="card">
+            <h2 class="card__title">Training and certifications</h2>
+            <p class="card__sub">Added automatically from company training and external records.</p>
+            <ul class="list certs">
+              <li><div class="cert__name">Six Sigma Green Belt</div><div class="cert__src">External certification</div></li>
+              <li><div class="cert__name">Microsoft Azure Fundamentals</div><div class="cert__src">External certification</div></li>
+              <li><div class="cert__name">Customer De-escalation Workshop</div><div class="cert__src">In-company training</div></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2 class="card__title">Career goals</h2>
+            <p class="card__sub">What I want to learn next.</p>
+            <div class="goal-chips">
+              <span class="chip chip--amber">Data analytics</span>
+              <span class="chip chip--amber">Team leadership</span>
+              <span class="chip chip--amber">Quality assurance</span>
+            </div>
+            <div class="toggle-row">
+              <span id="xdept-label">Open to cross-department projects</span>
+              <button class="switch" id="xdept" type="button" role="switch" aria-checked="true" aria-labelledby="xdept-label"></button>
+            </div>
+          </div>
+
+          <div class="fit">
+            <h3>You might be a fit!</h3>
+            <p>Your passport matches 70% or more of the skills for 2 open roles and 3 quick projects.</p>
+            <a class="btn btn--white" href="#marketplace">See my matches</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 2. Job Marketplace ========== -->
+    <section class="view" id="view-marketplace" data-view="marketplace">
+      <header class="page-head">
+        <div>
+          <div class="eyebrow">Employee view</div>
+          <h1 class="page-title">Internal Job Marketplace</h1>
+          <p class="page-lead">Every role is posted here first, before JobStreet or Indeed. Matches are based on your skills and manager endorsements, across all departments.</p>
+        </div>
+      </header>
+
+      <div class="banner">
+        <div class="banner__icon"><svg class="icon"><use href="#i-star"/></svg></div>
+        <div>
+          <h3>You might be a fit!</h3>
+          <p>You have at least 70% of the required skills for Quality Assurance Analyst. Internal applications close in 5 days.</p>
+        </div>
+      </div>
+
+      <div class="pills" role="tablist" aria-label="Filter roles">
+        <button class="pill is-active" type="button" data-filter="all">All (5)</button>
+        <button class="pill" type="button" data-filter="project">Quick projects (3)</button>
+        <button class="pill" type="button" data-filter="role">Open roles (2)</button>
+      </div>
+
+      <div class="jobs">
+        <article class="card job" data-type="role" id="job-qa">
+          <div>
+            <div class="job__meta-top"><span class="tag tag--blue">Open role</span><span class="job__dept">Quality and Compliance</span></div>
+            <h2 class="job__title">Quality Assurance Analyst</h2>
+            <p class="job__info">Full-time role · internal-only window, 5 days left</p>
+            <p class="job__skills"><b>Skills needed:</b> Quality auditing, data entry, attention to detail</p>
+          </div>
+          <div class="match">
+            <div class="match__row"><span>Skills match</span><span>78%</span></div>
+            <div class="bar"><span class="bar__fill" style="width:78%"></span></div>
+            <button class="btn btn--primary btn--block js-apply" type="button">Apply</button>
+          </div>
+        </article>
+
+        <article class="card job" data-type="project">
+          <div>
+            <div class="job__meta-top"><span class="tag tag--amber">Quick project</span><span class="job__dept">Marketing</span></div>
+            <h2 class="job__title">Design a presentation</h2>
+            <p class="job__info">Quick project · 2 days · remote-friendly</p>
+            <p class="job__skills"><b>Skills needed:</b> Presentation design, copywriting</p>
+          </div>
+          <div class="match">
+            <div class="match__row"><span>Skills match</span><span>85%</span></div>
+            <div class="bar"><span class="bar__fill" style="width:85%"></span></div>
+            <button class="btn btn--primary btn--block js-apply" type="button">Apply</button>
+          </div>
+        </article>
+
+        <article class="card job" data-type="project">
+          <div>
+            <div class="job__meta-top"><span class="tag tag--amber">Quick project</span><span class="job__dept">Technical Support</span></div>
+            <h2 class="job__title">Write help-center articles</h2>
+            <p class="job__info">Quick project · 1 week · part-time</p>
+            <p class="job__skills"><b>Skills needed:</b> Copywriting, product knowledge</p>
+          </div>
+          <div class="match">
+            <div class="match__row"><span>Skills match</span><span>92%</span></div>
+            <div class="bar"><span class="bar__fill" style="width:92%"></span></div>
+            <button class="btn btn--primary btn--block js-apply" type="button">Apply</button>
+          </div>
+        </article>
+
+        <article class="card job" data-type="role">
+          <div>
+            <div class="job__meta-top"><span class="tag tag--blue">Open role</span><span class="job__dept">Customer Support</span></div>
+            <h2 class="job__title">Team Lead, Customer Support</h2>
+            <p class="job__info">Full-time role · internal-only window, 9 days left</p>
+            <p class="job__skills"><b>Skills needed:</b> Leadership, conflict handling, coaching</p>
+          </div>
+          <div class="match">
+            <div class="match__row"><span>Skills match</span><span>62%</span></div>
+            <div class="bar"><span class="bar__fill bar__fill--orange" style="width:62%"></span></div>
+            <a class="btn btn--gap btn--block" href="#pathway" data-path-target="lead">See how to close the gap</a>
+          </div>
+        </article>
+
+        <article class="card job" data-type="project">
+          <div>
+            <div class="job__meta-top"><span class="tag tag--amber">Quick project</span><span class="job__dept">Operations</span></div>
+            <h2 class="job__title">Translate one document (Spanish)</h2>
+            <p class="job__info">Quick project · 1 day</p>
+            <p class="job__skills"><b>Skills needed:</b> Spanish, attention to detail</p>
+          </div>
+          <div class="match">
+            <div class="match__row"><span>Skills match</span><span>88%</span></div>
+            <div class="bar"><span class="bar__fill" style="width:88%"></span></div>
+            <button class="btn btn--primary btn--block js-apply" type="button">Apply</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== 3. Mentorship ========== -->
+    <section class="view" id="view-mentorship" data-view="mentorship">
+      <header class="page-head">
+        <div>
+          <div class="eyebrow">Employee view</div>
+          <h1 class="page-title">Mentorship Matching</h1>
+          <p class="page-lead">Senior colleagues are paired with you based on your career goals, skill gaps and personality assessment, so the match is not left to chance.</p>
+        </div>
+      </header>
+
+      <div class="grid-2 grid-2--rev">
+        <div>
+          <div class="card goal-box">
+            <div class="overline">Your goal</div>
+            <div class="goal-chips">
+              <span class="chip chip--amber">Team leadership</span>
+              <span class="chip chip--amber">Conflict handling</span>
+            </div>
+          </div>
+
+          <h2 class="section-title" style="margin-top:24px">Suggested mentors</h2>
+          <div class="mentors" role="radiogroup" aria-label="Suggested mentors">
+            <button class="mentor is-selected" type="button" role="radio" aria-checked="true" data-mentor="Marites Villanueva">
+              <div class="mentor__head">
+                <div class="avatar">MV</div>
+                <div class="mentor__who">
+                  <div class="mentor__name">Marites Villanueva</div>
+                  <div class="mentor__role">Senior Team Lead, Customer Support</div>
+                </div>
+                <div class="mentor__pct">94%</div>
+              </div>
+              <p class="mentor__why">Goal match: leadership. Covers your conflict-handling gap. Personality assessment: complementary styles.</p>
+            </button>
+
+            <button class="mentor" type="button" role="radio" aria-checked="false" data-mentor="Paolo Mercado">
+              <div class="mentor__head">
+                <div class="avatar">PM</div>
+                <div class="mentor__who">
+                  <div class="mentor__name">Paolo Mercado</div>
+                  <div class="mentor__role">Operations Manager</div>
+                </div>
+                <div class="mentor__pct">87%</div>
+              </div>
+              <p class="mentor__why">Goal match: team leadership. Strong coaching background. Personality assessment: similar styles.</p>
+            </button>
+
+            <button class="mentor" type="button" role="radio" aria-checked="false" data-mentor="Lea Domingo">
+              <div class="mentor__head">
+                <div class="avatar">LD</div>
+                <div class="mentor__who">
+                  <div class="mentor__name">Lea Domingo</div>
+                  <div class="mentor__role">Quality and Compliance Lead</div>
+                </div>
+                <div class="mentor__pct">81%</div>
+              </div>
+              <p class="mentor__why">Goal match: quality assurance. Covers your quality-auditing gap.</p>
+            </button>
+          </div>
+        </div>
+
+        <div class="stack">
+          <div class="card">
+            <h2 class="card__title card__title--sm">Your mentoring plan with <span id="plan-mentor">Marites Villanueva</span></h2>
+            <p class="card__sub" style="font-size:13px">Generated automatically once you are matched. Tick milestones as you go.</p>
+            <div class="plan__progress"><span>Progress</span><span id="plan-count">1 of 4 milestones</span></div>
+            <div class="bar"><span class="bar__fill" id="plan-bar" style="width:25%"></span></div>
+            <ul class="list milestones" id="milestones">
+              <li><button class="milestone" type="button" role="checkbox" aria-checked="true"><span class="checkbox"><svg class="icon"><use href="#i-check"/></svg></span>First coffee catch-up booked</button></li>
+              <li><button class="milestone" type="button" role="checkbox" aria-checked="false"><span class="checkbox"><svg class="icon"><use href="#i-check"/></svg></span>Agree on a 90-day goal</button></li>
+              <li><button class="milestone" type="button" role="checkbox" aria-checked="false"><span class="checkbox"><svg class="icon"><use href="#i-check"/></svg></span>Resume reviewed</button></li>
+              <li><button class="milestone" type="button" role="checkbox" aria-checked="false"><span class="checkbox"><svg class="icon"><use href="#i-check"/></svg></span>Mock interview completed</button></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2 class="card__title card__title--sm">Suggested talking points</h2>
+            <p class="card__sub" style="font-size:13px">For your first conversation.</p>
+            <ul class="list talk" id="talking-points">
+              <li>How did you handle your first difficult team conversation?</li>
+              <li>What would you do differently as a first-time team lead?</li>
+              <li>Which skills should I build before the next Team Lead opening?</li>
+            </ul>
+          </div>
+
+          <div class="capsule">
+            <div class="overline">Knowledge sharing</div>
+            <h3>Knowledge capsules from senior staff</h3>
+            <p>When experienced employees retire or resign, their problem-solving methods stay in the company, so the next group can learn from them. Example capsule: "Handling escalations" · 12 min video.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 4. Career Pathway ========== -->
+    <section class="view" id="view-pathway" data-view="pathway">
+      <header class="page-head page-head--end">
+        <div>
+          <div class="eyebrow">Employee view</div>
+          <h1 class="page-title">Career Pathway</h1>
+          <p class="page-lead">See the skills, experience and training you need for your next role, and where you stand today.</p>
+        </div>
+        <div class="pills" role="tablist" aria-label="Target role">
+          <button class="pill is-active" type="button" data-target="qa">QA Analyst</button>
+          <button class="pill" type="button" data-target="lead">Team Lead</button>
+        </div>
+      </header>
+
+      <div class="card path">
+        <h2 class="card__title card__title--sm">Your path</h2>
+        <div class="path__row">
+          <div class="path__step">
+            <div class="overline">Now</div>
+            <div class="path__box path__box--now">Support Agent</div>
+          </div>
+          <div class="path__arrow"><svg class="icon"><use href="#i-arrow"/></svg></div>
+          <div class="path__step">
+            <div class="overline">Target</div>
+            <div class="path__box path__box--target" id="path-target">QA Analyst</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h2 class="card__title card__title--sm" id="req-title">What you need for Quality Assurance Analyst</h2>
+          <p class="card__sub" style="font-size:13px">Compared with your Talent Passport.</p>
+          <ul class="list reqs" id="reqs"></ul>
+        </div>
+
+        <div class="stack">
+          <div class="card readiness">
+            <div class="overline">Readiness</div>
+            <div class="readiness__pct" id="ready-pct">67%</div>
+            <div class="readiness__sub" id="ready-sub">4 of 6 requirements met</div>
+            <div class="bar"><span class="bar__fill" id="ready-bar" style="width:67%"></span></div>
+          </div>
+
+          <div class="next">
+            <div class="overline">Suggested next step</div>
+            <p id="next-text">Complete "Quality auditing basics", then apply to the open Quality Assurance Analyst role.</p>
+            <a class="btn btn--dark" id="next-btn" href="#marketplace">View the open role</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5. Talent Dashboard ========== -->
+    <section class="view" id="view-dashboard" data-view="dashboard">
+      <header class="page-head">
+        <div>
+          <div class="eyebrow">HR view</div>
+          <h1 class="page-title">Talent Dashboard</h1>
+          <p class="page-lead">The whole company at a glance: internal moves, mentoring progress, hiring cost savings and where training will matter most.</p>
+        </div>
+      </header>
+
+      <div class="pills dash-toggle" role="tablist" aria-label="Scope">
+        <button class="pill is-active" type="button" data-scope="all">All departments</button>
+        <button class="pill" type="button" data-scope="pilot">Pilot: Customer Support</button>
+      </div>
+
+      <div class="pilot">
+        <span class="pilot__badge">Land and expand pilot · Customer Support · day 24 of 30</span>
+        <span class="pilot__note">All figures on this screen are sample data for illustration.</span>
+      </div>
+
+      <div class="stats">
+        <div class="card stat"><div class="stat__label">Internal fills this quarter</div><div class="stat__value" data-stat="fills">14</div></div>
+        <div class="card stat"><div class="stat__label">Hiring cost avoided</div><div class="stat__value" data-stat="saved">₱640K</div></div>
+        <div class="card stat"><div class="stat__label">Active mentoring pairs</div><div class="stat__value" data-stat="pairs">38</div></div>
+        <div class="card stat"><div class="stat__label">Passports up to date</div><div class="stat__value" data-stat="passports">76%</div></div>
+      </div>
+
+      <div class="grid-2 grid-2--dash">
+        <div class="card">
+          <h2 class="card__title card__title--sm">Skills gap analysis</h2>
+          <p class="card__sub" style="font-size:13px">Employees who want a role versus employees who already have its key skill, so HR knows which training to organize.</p>
+          <div class="legend"><span><i class="sw-orange"></i>Want the role</span><span><i class="sw-teal"></i>Have the skill</span></div>
+          <ul class="list gaps" id="gaps"></ul>
+        </div>
+
+        <div class="stack">
+          <div class="card">
+            <h2 class="card__title card__title--sm">Internal moves vs external hires</h2>
+            <p class="card__sub" style="font-size:13px">Last six months.</p>
+            <div class="legend"><span><i class="sw-teal"></i>Internal moves</span><span><i class="sw-orange"></i>External hires</span></div>
+            <div class="chart" id="chart" role="img" aria-label="Internal moves versus external hires, June to November"></div>
+          </div>
+
+          <div class="goal-card">
+            <div class="overline">Goal</div>
+            <h3>Cut external hiring costs by 10% through internal mobility</h3>
+            <div class="bar"><span class="bar__fill" id="goal-bar" style="width:70%"></span></div>
+            <p id="goal-text">7% reduction so far, 3 points to go</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
